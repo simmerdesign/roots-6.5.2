@@ -27,6 +27,32 @@ module.exports = function(grunt) {
           sourceMapFilename: 'assets/css/main.min.css.map',
           sourceMapRootpath: '/app/themes/roots/'
         }
+      },
+      admin: {
+        files: {
+          'assets/css/admin.css': [
+            'assets/less/admin.less'
+          ]
+        },
+        options: {
+          compress: true,
+          // LESS source map
+          // To enable, set sourceMap to true and update sourceMapRootpath based on your install
+          sourceMap: false
+        }
+      },
+      login: {
+        files: {
+          'assets/css/login.css': [
+            'assets/less/login.less'
+          ]
+        },
+        options: {
+          compress: true,
+          // LESS source map
+          // To enable, set sourceMap to true and update sourceMapRootpath based on your install
+          sourceMap: false
+        }
       }
     },
     uglify: {
@@ -72,6 +98,18 @@ module.exports = function(grunt) {
           'assets/less/bootstrap/*.less'
         ],
         tasks: ['less', 'version']
+      },
+      lessadmin: {
+        files: [
+          'assets/less/admin.less'
+        ],
+        tasks: ['less']
+      },
+      lesslogin: {
+        files: [
+          'assets/less/login.less'
+        ],
+        tasks: ['less']
       },
       js: {
         files: [
